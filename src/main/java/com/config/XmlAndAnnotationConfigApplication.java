@@ -14,14 +14,16 @@ public class XmlAndAnnotationConfigApplication {
 		
 		var context = new ClassPathXmlApplicationContext("configXML.xml");
 		
-		XMLController bean = context.getBean("XMLController",XMLController.class);
+		XMLController bean = context.getBean("xmlController",XMLController.class);
 		
 		bean.methodOfController();
 		
 		
-		XMLConstructorBean con = context.getBean("constructorBean", XMLConstructorBean.class);
+		XMLConstructorBean con = context.getBean("xmlConstructorBean", XMLConstructorBean.class);
 		
 		con.methodOfXMLConstructor();
+		
+		con.addData("Ganpa", 25000);
 		
 		
 		
