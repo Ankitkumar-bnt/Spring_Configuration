@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -29,6 +30,7 @@ public class AnnotationConfiguration {
 	
 	
 	@Bean
+	@Scope("prototype")
 	AnnotationService annotationService(JdbcTemplate jdbcTemplate)
 	{
 		AnnotationService service = new AnnotationService();

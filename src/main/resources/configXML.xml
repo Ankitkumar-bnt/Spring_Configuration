@@ -17,7 +17,7 @@
 
     <bean id="xmlService" class="com.config.xmlConfig.XMLServices"/>
 
-    <bean id="xmlController" class="com.config.xmlConfig.XMLController" autowire="byType">
+    <bean id="xmlController" class="com.config.xmlConfig.XMLController" autowire="byType" scope="prototype">
 <!--         <property name="serve" ref="xmlService"/> -->
     </bean>
 
