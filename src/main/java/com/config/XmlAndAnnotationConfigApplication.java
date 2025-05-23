@@ -41,6 +41,7 @@ public class XmlAndAnnotationConfigApplication {
 
 		System.out.println(annotationBean);
 		System.out.println(annotationBean1);
+		
 		annotationBean.show();
 		annotationBean1.show();
 		annotationBean.getDataByAnnoConfig();
@@ -48,14 +49,13 @@ public class XmlAndAnnotationConfigApplication {
 		//===========================================Bean Life Cycle=======================================================
 		
 		var context3 = new AnnotationConfigApplicationContext(ConfigFile.class);
-		
 		SpringBeanLifeCycle sblc = context3.getBean(SpringBeanLifeCycle.class);
 		
-		
+		sblc.ready();
 		
 //		context.close();
 		context2.close();
-		context3.close();
+		context3.close();//bean about to destroy
 		
 	}
 
